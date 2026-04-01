@@ -24,7 +24,7 @@
   --rofiex-text-gray: #89868d;
   --rofiex-text-gray-rgb: 137, 134, 141;
   --rofiex-base: #263973;
-  --rofiex-base-rgb: 254, 87, 79;
+  --rofiex-base-rgb: 38, 57, 115;
   --rofiex-gray: #F5F1EF;
   --rofiex-gray-rgb: 245, 241, 239;
   --rofiex-white: #fff;
@@ -6977,7 +6977,6 @@ body.megamenu-popup-active .mobile-nav__content {
 --------------------------------------------------------------*/
 .product {
   position: relative;
-  padding: 120px 0;
 }
 @media (max-width: 767px) {
   .product {
@@ -13072,8 +13071,7 @@ body.megamenu-popup-active .mobile-nav__content {
 
 .service-three {
   position: relative;
-  background-color: var(--rofiex-black, #000000);
-  padding: 290px 0 120px;
+  padding: 60px 0 120px;
   overflow: hidden;
   counter-reset: count;
 }
