@@ -54,6 +54,308 @@
     font-weight: 700;
     text-decoration: none;
 }
+.gallery-page__card img {
+    height: 350px; /* Set your desired uniform height */
+    width: 100%;    /* Keep full width */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    display: block;
+}
+    </style>
+     
+    <style>
+       
+
+        /* dark premium background with subtle gradient */
+        .product-dark-section {
+            background: radial-gradient(circle at 10% 30%, #0f1217, #07090e);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* animated noise/grain overlay (optional modern effect) */
+        .product-dark-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDMiLz48L3N2Zz4=');
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* heading styling — dark glam */
+        .section-heading {
+            background: linear-gradient(135deg, #FFFFFF 0%, #B0C4FF 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+            font-weight: 800;
+        }
+
+        .heading-glow {
+            text-shadow: 0 2px 20px rgba(0, 100, 255, 0.2);
+        }
+
+        .title-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #a855f7);
+            border-radius: 4px;
+            margin: 20px auto 0;
+            box-shadow: 0 0 8px rgba(59,130,246,0.5);
+        }
+
+        /* product card — dark glassmorphic style */
+        .product-card {
+            background: rgba(18, 22, 30, 0.85);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(55, 65, 81, 0.5);
+            border-radius: 28px;
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            background: rgba(24, 29, 40, 0.95);
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(59,130,246,0.2);
+        }
+
+        /* image container */
+        .product-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #0b0e13;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            display: block;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.06);
+        }
+
+        /* floating whatsapp btn modern */
+        .whatsapp-float-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #25D366;
+            border-radius: 60px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: scale(0.85);
+            transition: all 0.25s ease-out;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+            backdrop-filter: blur(2px);
+            text-decoration: none;
+        }
+
+        .product-card:hover .whatsapp-float-btn {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .whatsapp-float-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+
+        /* content area */
+        .product-content {
+            padding: 1.6rem 1.5rem 1.8rem;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title a {
+            text-decoration: none;
+            background: linear-gradient(120deg, #fff, #cbd5ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            transition: all 0.2s;
+        }
+
+        .product-title a:hover {
+            background: linear-gradient(120deg, #60a5fa, #c084fc);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .price-tag {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 6px;
+            margin: 1rem 0 1.3rem;
+        }
+
+        .current-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #F0F3FA;
+            letter-spacing: -0.5px;
+        }
+
+        .currency-symbol {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #9ca3af;
+        }
+
+        /* cta button */
+        .btn-whatsapp-buy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(105deg, #2563eb, #4f46e5);
+            width: 100%;
+            padding: 0.9rem 0;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.25s;
+            border: none;
+            box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+        }
+
+        .btn-whatsapp-buy i {
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-whatsapp-buy:hover {
+            background: linear-gradient(105deg, #3b82f6, #6366f1);
+            transform: scale(1.01);
+            box-shadow: 0 12px 20px -8px rgba(37, 99, 235, 0.45);
+        }
+
+        .btn-whatsapp-buy:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Owl Carousel overrides for dark theme */
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next {
+            background: rgba(30, 35, 48, 0.85) !important;
+            backdrop-filter: blur(8px);
+            border-radius: 50% !important;
+            width: 46px;
+            height: 46px;
+            font-size: 28px !important;
+            color: #e2e8f0 !important;
+            transition: all 0.2s;
+            border: 1px solid rgba(59,130,246,0.4);
+        }
+
+        .owl-carousel .owl-nav button.owl-prev:hover,
+        .owl-carousel .owl-nav button.owl-next:hover {
+            background: #2563eb !important;
+            color: white !important;
+            transform: scale(1.05);
+            border-color: transparent;
+        }
+
+        .owl-carousel .owl-dots .owl-dot span {
+            background: #334155 !important;
+            width: 10px;
+            height: 10px;
+            margin: 0 6px;
+            transition: all 0.2s;
+        }
+
+        .owl-carousel .owl-dots .owl-dot.active span {
+            background: #3b82f6 !important;
+            width: 26px;
+            border-radius: 12px;
+            box-shadow: 0 0 6px #3b82f6;
+        }
+
+        /* custom nav positions */
+        .owl-theme .owl-nav {
+            margin-top: 10px;
+        }
+
+        /* extra spacing */
+        .py-section {
+            padding: 5rem 0;
+        }
+
+        /* responsive fine-tune */
+        @media (max-width: 768px) {
+            .product-content {
+                padding: 1.2rem;
+            }
+            .product-title {
+                font-size: 1.3rem;
+            }
+            .current-price {
+                font-size: 1.7rem;
+            }
+            .btn-whatsapp-buy {
+                padding: 0.75rem 0;
+                font-size: 0.9rem;
+            }
+            .product-img {
+                height: 220px;
+            }
+        }
+
+        /* subtle badge effect */
+        .badge-new {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
+            color: #facc15;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+            border-left: 2px solid #facc15;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* optional shimmer effect */
+        @keyframes subtleShine {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
     </style>
 </head>
 
@@ -139,123 +441,68 @@
 </header><!-- /.main-header -->
 
         <!--Main Slider Start-->
-      <section class="main-slider-three">
-    <div class="main-slider-three__carousel rofiex-owl__carousel owl-carousel" data-owl-options='{
-        "loop": true,
-        "animateOut": "slideOutDown",
-        "animateIn": "fadeIn",
-        "items": 1,
-        "autoplayTimeout": 7000,
-        "smartSpeed": 1000,
-        "autoplay": true,
-        "autoplayHoverPause": true,
-        "nav": true,
-        "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"],
-        "dots": false,
-        "margin": 0
-    }'>
-
-        <!-- Slider Item 1 -->
-        <div class="item">
-            <div class="main-slider-three__item">
-                <div class="main-slider-three__bg" style="background-image: url(assets/images/shapes/slider-3-bg-1.png);"></div>
-                <div class="main-slider-three__left-image" style="background-image: url(assets/images/backgrounds/slider-3-layer.png);"></div>
-                <div class="main-slider-three__shape-1">
-                    <img src="assets/images/shapes/slider-3-shape-1.png" alt="roof hanger">
-                </div>
-                <div class="main-slider-three__shape-2">
-                    <img src="assets/images/shapes/slider-3-shape-2.png" alt="roof hanger">
-                </div>
-                <div class="main-slider-three__shape-3">
-                    <img src="assets/images/shapes/slider-3-shape-3.png" alt="roof hanger">
-                </div>
-                <div class="main-slider-three__shape-bg">
-                    <img src="assets/images/backgrounds/slider-3-1.jpg" alt="roof hanger">
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8">
-                            <div class="main-slider-three__content">
-                                <h2 class="main-slider-three__title">
-                                    <span class="main-slider-three__title-anim">Premium Roof Hangers</span><br>
-                                    <span class="main-slider-three__title-anim">Installation Services</span><br>
-                                    <span class="main-slider-three__title-anim">For Safety & Durability</span>
-                                </h2>
+      <section class="main-slider-two">
+            <div class="main-slider-two__shape" style="background-image: url(assets/images/shapes/slider-2-shape.png);"></div>
+            <div class="main-slider-two__carousel rofiex-owl__carousel owl-carousel" data-owl-options='{
+		"loop": true,
+		"animateOut": "fadeOut",
+		"animateIn": "fadeIn",
+		"items": 1,
+		"autoplay": true,
+		"autoplayTimeout": 7000,
+		"smartSpeed": 1000,
+		"nav": false,
+        "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"],
+		"dots": true,
+		"margin": 0
+		}'>
+                <div class="item">
+                    <div class="main-slider-two__image" style="background-image: url(assets/images/backgrounds/slider-2-1.jpg);"></div>
+                    <div class="container">
+                        <div class="main-slider-two__content">
+                            <h5 class="main-slider-two__sub-title"><img src="assets/images/shapes/sec-title__shape-two.png" alt="rofiex">Roofing Service</h5>
+                            <h3 class="main-slider-two__title">We Are Expert In <br>Roofing Service</h3>
+                            <p class="main-slider-two__text">
+                                We provide the most responsive and Bulding design for <br>companies and businesses worldwide.
+                            </p>
+                            <div class="main-slider-two__btn">
+                                <a href="services.html" class="rofiex-btn"><span>Need Services<i class="icon-up-right-arrow"></i></span></a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slider Item 2 -->
-        <div class="item">
-            <div class="main-slider-three__item">
-                <div class="main-slider-three__bg" style="background-image: url(assets/images/shapes/slider-3-bg-1.png);"></div>
-                <div class="main-slider-three__left-image" style="background-image: url(assets/images/backgrounds/slider-3-layer.png);"></div>
-                <div class="main-slider-three__shape-1">
-                    <img src="assets/images/shapes/slider-3-shape-1.png" alt="roof hanger">
-                </div>
-                <div class="main-slider-three__shape-2">
-                    <img src="assets/images/shapes/slider-3-shape-2.png" alt="roof hanger">
-                </div>
-                <div class="main-slider-three__shape-3">
-                    <img src="assets/images/shapes/slider-3-shape-3.png" alt="roof hanger">
-                </div>
-                <div class="main-slider-three__shape-bg">
-                    <img src="assets/images/backgrounds/slider-3-2.jpg" alt="roof hanger">
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8">
-                            <div class="main-slider-three__content">
-                                <h2 class="main-slider-three__title">
-                                    <span class="main-slider-three__title-anim">Custom Roof Hanger</span><br>
-                                    <span class="main-slider-three__title-anim">Solutions for Every Roof</span><br>
-                                    <span class="main-slider-three__title-anim">Professional Installation</span>
-                                </h2>
+                </div><!-- item -->
+                <div class="item">
+                    <div class="main-slider-two__image" style="background-image: url(assets/images/backgrounds/slider-2-2.jpg);"></div>
+                    <div class="container">
+                        <div class="main-slider-two__content">
+                            <h5 class="main-slider-two__sub-title"><img src="assets/images/shapes/sec-title__shape-two.png" alt="rofiex">Roofing Service</h5>
+                            <h3 class="main-slider-two__title">We Are Expert In <br>Roofing Service</h3>
+                            <p class="main-slider-two__text">
+                                We provide the most responsive and Bulding design for <br>companies and businesses worldwide.
+                            </p>
+                            <div class="main-slider-two__btn">
+                                <a href="services.html" class="rofiex-btn"><span>Need Services<i class="icon-up-right-arrow"></i></span></a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slider Item 3 -->
-        <div class="item">
-            <div class="main-slider-three__item">
-                <div class="main-slider-three__bg" style="background-image: url(assets/images/shapes/slider-3-bg-1.png);"></div>
-                <div class="main-slider-three__left-image" style="background-image: url(assets/images/backgrounds/slider-3-layer.png);"></div>
-                <div class="main-slider-three__shape-1">
-                    <img src="assets/images/shapes/slider-3-shape-1.png" alt="roof hanger">
-                </div>
-                <div class="main-slider-three__shape-2">
-                    <img src="assets/images/shapes/slider-3-shape-2.png" alt="roof hanger">
-                </div>
-                <div class="main-slider-three__shape-3">
-                    <img src="assets/images/shapes/slider-3-shape-3.png" alt="roof hanger">
-                </div>
-                <div class="main-slider-three__shape-bg">
-                    <img src="assets/images/backgrounds/slider-3-3.jpg" alt="roof hanger">
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8">
-                            <div class="main-slider-three__content">
-                                <h2 class="main-slider-three__title">
-                                    <span class="main-slider-three__title-anim">Roof Hanger Repair</span><br>
-                                    <span class="main-slider-three__title-anim">Reliable & Quick Services</span><br>
-                                    <span class="main-slider-three__title-anim">For All Roof Types</span>
-                                </h2>
+                </div><!-- item -->
+                <div class="item">
+                    <div class="main-slider-two__image" style="background-image: url(assets/images/backgrounds/slider-2-3.jpg);"></div>
+                    <div class="container">
+                        <div class="main-slider-two__content">
+                            <h5 class="main-slider-two__sub-title"><img src="assets/images/shapes/sec-title__shape-two.png" alt="rofiex">Roofing Service</h5>
+                            <h3 class="main-slider-two__title">We Are Expert In <br>Roofing Service</h3>
+                            <p class="main-slider-two__text">
+                                We provide the most responsive and Bulding design for <br>companies and businesses worldwide.
+                            </p>
+                            <div class="main-slider-two__btn">
+                                <a href="about.html" class="rofiex-btn"><span>Need Services<i class="icon-up-right-arrow"></i></span></a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
+                </div><!-- item -->
+            </div><!-- banner-slider -->
+        </section>
         <!--Main Slider End-->
 
         <!-- Feature Start -->
@@ -315,8 +562,8 @@
             <div class="col-xl-6">
                 <div class="rofiex-stretch-element-inside-column">
                     <div class="about-three__image wow fadeInLeft" data-wow-delay="100ms">
-                        <img src="assets/images/new/product5-900x900.jpg" style="height: 500px;;" alt="roof hanger service">
-                        <!-- <img src="assets/images/resources/about-3-2.jpg" alt="roof hanger installation"> -->
+                        <img src="assets/images/new/product5-900x900.jpg" style="height: 400px;;" alt="roof hanger service">
+                        <img src="assets/images/resources/about-3-2.jpg" alt="roof hanger installation">
                         <div class="about-three__experiance count-box wow fadeInUp" data-wow-delay="400ms">
                             <div class="about-three__experiance__years">
                                 <span class="count-text" data-stop="26" data-speed="1500"></span>+
@@ -374,7 +621,45 @@
         </div>
     </div>
 </section>
-        
+         <section class="video-one">
+    <div class="video-one__bg jarallax" data-jarallax data-speed="0.3" data-imgPosition="50% -100%" style="background-image: url(assets/images/backgrounds/video-bg-1.jpg);"></div>
+    <!-- /.video-one__bg -->
+    <div class="video-one__shape" style="background-image: url(assets/images/shapes/video-1-shape-1.png);"></div>
+    <!-- /.video-one__shape -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 wow fadeInLeft" data-wow-delay="200ms">
+                <div class="video-one__content">
+                    <div class="sec-title text-left">
+                        <h6 class="sec-title__tagline bw-split-in-up">
+                            <img src="assets/images/shapes/sec-title__shape-one-white.png" alt="rofiex">OUR INTRODUCTION
+                            <img src="assets/images/shapes/sec-title__shape-one-white.png" alt="rofiex">
+                        </h6>
+                        <h3 class="sec-title__title sec-title__title--white bw-split-in-left">
+                            Professional Roofing Services <br>for Homes & Businesses in Chennai
+                        </h3>
+                    </div><!-- /.sec-title -->
+                    <p class="video-one__content__text">
+                        We specialize in high-quality roofing solutions, from repairs and maintenance to complete replacements. 
+                        Our expert team ensures durability, safety, and aesthetic appeal in every project.
+                    </p>
+                    <a href="about.html" class="rofiex-btn">
+                        <span>Learn More About Us<i class="icon-up-right-arrow"></i></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-center wow fadeInRight" data-wow-delay="200ms">
+                <!-- Uncomment below to add a video popup -->
+                <!-- 
+                <a href="https://www.youtube.com/watch?v=h9MbznbxlLc" class="video-popup">
+                    <i class="icon-play"></i>
+                    <span class="ripple"></span>
+                </a> 
+                -->
+            </div>
+        </div>
+    </div><!-- /.container -->
+</section><!-- /.video-one -->
         <!-- Service Start -->
        <section class="service-three">
     <div class="service-three__shape" style="background-image: url(assets/images/shapes/service-bg-3.png);"></div>
@@ -492,149 +777,358 @@
         </div>
     </div>
 </section>
-   <section class="product py-16 bg-gray-50">
-    <div class="container mx-auto px-4 text-center">
-        <!-- Heading -->
-        <div class="mb-12">
-            <h2 class="section-heading text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
-                Our Products
-            </h2>
-            <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+   <section class="product-dark-section py-section">
+        <div class="container">
+            <!-- Heading Area - modern dark style with accent -->
+            <div class="text-center mb-14">
+                <h2 class="section-heading text-4xl md:text-5xl font-bold tracking-tight heading-glow">
+                    Premium <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Collections</span>
+                </h2>
+                <div class="title-divider"></div>
+                <p class="text-gray-400 mt-5 max-w-2xl mx-auto text-lg font-light">
+                    Elevate your space with handpicked designs. Shop the finest quality products with instant WhatsApp ordering.
+                </p>
+            </div>
+
+            <!-- Owl Carousel Wrapper -->
+            <div class="product__carousel rofiex-owl__carousel rofiex-owl__carousel--basic-nav owl-carousel owl-theme"
+                 id="productCarousel"
+                 data-owl-options='{
+                    "items": 1,
+                    "loop": true,
+                    "smartSpeed": 600,
+                    "nav": true,
+                    "dots": true,
+                    "autoplay": false,
+                    "margin": 24,
+                    "center": false,
+                    "responsive": {
+                        "0": {"items": 1, "nav": false},
+                        "576": {"items": 2, "nav": false},
+                        "768": {"items": 3},
+                        "992": {"items": 4}
+                    }
+                 }'>
+                <!-- ========== PRODUCT 1 ========== -->
+                <div class="item">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="assets/images/new/p-1.png" 
+                                 alt="Ceiling Mounted Premium" 
+                                 class="product-img"
+                                 loading="lazy">
+                            <div class="badge-new"><i class="fas fa-star-of-life" style="font-size: 8px; margin-right: 4px;"></i> BESTSELLER</div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Ceiling%20Mounted%20(Elite%20Series)" 
+                               target="_blank"
+                               class="whatsapp-float-btn"
+                               aria-label="WhatsApp order">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">
+                                <a href="#">Ceiling Mounted</a>
+                            </h4>
+                            <div class="price-tag">
+                                <span class="currency-symbol">₹</span>
+                                <span class="current-price">240</span>
+                                <span class="text-gray-400 text-sm line-through ml-2">₹399</span>
+                                <span class="bg-blue-900/40 text-blue-300 text-xs px-2 py-0.5 rounded-full ml-2">-40%</span>
+                            </div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Ceiling%20Mounted%20(Elite%20Series)" 
+                               target="_blank"
+                               class="btn-whatsapp-buy">
+                                <i class="fab fa-whatsapp"></i> Buy Now on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== PRODUCT 2 ========== -->
+                <div class="item">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="assets/images/new/p-2.png" 
+                                 alt="Chrome Rack" 
+                                 class="product-img"
+                                 loading="lazy">
+                            <div class="badge-new"><i class="fas fa-bolt" style="font-size: 8px;"></i> TRENDING</div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Chrome%20Rack%20(Deluxe)" 
+                               target="_blank"
+                               class="whatsapp-float-btn">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">
+                                <a href="#">Chrome Rack</a>
+                            </h4>
+                            <div class="price-tag">
+                                <span class="currency-symbol">₹</span>
+                                <span class="current-price">240</span>
+                                <span class="text-gray-400 text-sm line-through ml-2">₹320</span>
+                            </div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Chrome%20Rack%20(Deluxe)" 
+                               target="_blank"
+                               class="btn-whatsapp-buy">
+                                <i class="fab fa-whatsapp"></i> Buy Now on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== PRODUCT 3 ========== -->
+                <div class="item">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="assets/images/new/p-1.png" 
+                                 alt="Zig Zag" 
+                                 class="product-img"
+                                 loading="lazy">
+                            <div class="badge-new"><i class="fas fa-fire"></i> HOT</div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Zig%20Zag%20(Designer)" 
+                               target="_blank"
+                               class="whatsapp-float-btn">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">
+                                <a href="#">Zig Zag</a>
+                            </h4>
+                            <div class="price-tag">
+                                <span class="currency-symbol">₹</span>
+                                <span class="current-price">240</span>
+                                <span class="text-gray-400 text-xs bg-gray-800/40 px-2 py-0.5 rounded-full ml-2">flat deal</span>
+                            </div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Zig%20Zag%20(Designer)" 
+                               target="_blank"
+                               class="btn-whatsapp-buy">
+                                <i class="fab fa-whatsapp"></i> Buy Now on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== PRODUCT 4 : WALL MOUNT ART (Extra premium) ========== -->
+                <div class="item">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="assets/images/new/p-3.png" 
+                                 alt="Aura Wall Light" 
+                                 class="product-img"
+                                 loading="lazy">
+                            <div class="badge-new"><i class="fas fa-gem"></i> NEW</div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Aura%20Wall%20Light" 
+                               target="_blank"
+                               class="whatsapp-float-btn">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">
+                                <a href="#">Aura Wall Light</a>
+                            </h4>
+                            <div class="price-tag">
+                                <span class="currency-symbol">₹</span>
+                                <span class="current-price">299</span>
+                                <span class="text-gray-400 text-sm line-through ml-2">₹450</span>
+                            </div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Aura%20Wall%20Light" 
+                               target="_blank"
+                               class="btn-whatsapp-buy">
+                                <i class="fab fa-whatsapp"></i> Buy Now on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== PRODUCT 5 : Minimal Floating Shelf ========== -->
+                <div class="item">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="assets/images/new/p-1.png" 
+                                 alt="Floating Shelf" 
+                                 class="product-img"
+                                 loading="lazy">
+                            <div class="badge-new">⭐ LIMITED</div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Floating%20Shelf%20Pro" 
+                               target="_blank"
+                               class="whatsapp-float-btn">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">
+                                <a href="#">Floating Shelf Pro</a>
+                            </h4>
+                            <div class="price-tag">
+                                <span class="currency-symbol">₹</span>
+                                <span class="current-price">349</span>
+                            </div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Floating%20Shelf%20Pro" 
+                               target="_blank"
+                               class="btn-whatsapp-buy">
+                                <i class="fab fa-whatsapp"></i> Buy Now on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== PRODUCT 6 : Industrial Pendant ========== -->
+                <div class="item">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="assets/images/new/p-2.png" 
+                                 alt="Industrial Pendant" 
+                                 class="product-img"
+                                 loading="lazy">
+                            <div class="badge-new"><i class="fas fa-crown"></i> PREMIUM</div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Industrial%20Pendant" 
+                               target="_blank"
+                               class="whatsapp-float-btn">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">
+                                <a href="#">Industrial Pendant</a>
+                            </h4>
+                            <div class="price-tag">
+                                <span class="currency-symbol">₹</span>
+                                <span class="current-price">540</span>
+                                <span class="text-gray-400 text-sm line-through ml-2">₹699</span>
+                            </div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Industrial%20Pendant" 
+                               target="_blank"
+                               class="btn-whatsapp-buy">
+                                <i class="fab fa-whatsapp"></i> Buy Now on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7: Ceiling mounted variant 2 (extra) -->
+                <div class="item">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="assets/images/new/p-3.png" 
+                                 alt="Lunar Ceiling" 
+                                 class="product-img"
+                                 loading="lazy">
+                            <div class="badge-new">SALE</div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Lunar%20Ceiling%20Light" 
+                               target="_blank"
+                               class="whatsapp-float-btn">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-title">
+                                <a href="#">Lunar Ceiling</a>
+                            </h4>
+                            <div class="price-tag">
+                                <span class="currency-symbol">₹</span>
+                                <span class="current-price">210</span>
+                                <span class="text-gray-400 text-sm line-through ml-2">₹300</span>
+                            </div>
+                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Lunar%20Ceiling%20Light" 
+                               target="_blank"
+                               class="btn-whatsapp-buy">
+                                <i class="fab fa-whatsapp"></i> Buy Now on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- subtle additional trust indicator (optional) -->
+            
         </div>
+    </section>
 
-        <div class="product__carousel rofiex-owl__carousel rofiex-owl__carousel--basic-nav owl-carousel owl-theme"
-             data-owl-options='{
-                "items": 1,
-                "loop": true,
-                "smartSpeed": 600,
-                "nav": true,
-                "dots": true,
-                "autoplay": false,
-                "margin": 24,
-                "center": false,
-                "responsive": {
-                    "0": {"items": 1, "nav": false},
-                    "576": {"items": 2, "nav": false},
-                    "768": {"items": 3},
-                    "992": {"items": 4}
-                }
-             }'>
+<section class="work-process-one">
+            <div class="work-process-one__border" style="background-image: url(assets/images/shapes/work-process-one-border.png);"></div>
+            <div class="container">
+                <div class="sec-title text-center">
 
-            <!-- Product Item 1 -->
-            <div class="item">
-                <div class="product__item group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="product__item__img relative overflow-hidden">
-                        <img src="assets/images/new/P-1.png" 
-                             alt="Ceiling Mounted" 
-                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                             loading="lazy">
-                        
-                        <!-- WhatsApp floating button -->
-                        <div class="product__item__btn absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Ceiling%20Mounted" 
-                               target="_blank"
-                               class="flex items-center justify-center w-11 h-11 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-colors">
-                                <i class="icon-whatsapp text-2xl"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <h6 class="sec-title__tagline bw-split-in-up"><img src="assets/images/shapes/sec-title__shape-one.png" alt="rofiex">OUR Working process<img src="assets/images/shapes/sec-title__shape-one.png" alt="rofiex"></h6><!-- /.sec-title__tagline -->
 
-                    <div class="product__item__content p-6">
-                        <h4 class="product__item__title text-xl font-semibold text-gray-900 mb-2">
-                            <a href="#" class="hover:text-blue-600 transition-colors">Ceiling Mounted</a>
-                        </h4>
-                        
-                        <div class="flex items-baseline justify-center gap-1 mb-5">
-                            <span class="text-3xl font-bold text-gray-900">₹240</span>
-                            <!-- <span class="text-sm text-gray-500 line-through">₹300</span> -->
-                        </div>
-
-                        <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Ceiling%20Mounted" 
-                           target="_blank"
-                           class="product__item__link block w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition-all text-center">
-                            Buy Now on WhatsApp
-                        </a>
-                    </div>
+                    <h3 class="sec-title__title bw-split-in-left">What Talking Happy Clients <br>Says About company</h3><!-- /.sec-title__title -->
+                </div><!-- /.sec-title -->
+                <div class="row gutter-y-30">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="00ms">
+                        <div class="work-process-one__item text-center">
+                            <div class="work-process-one__item__image">
+                                <img src="assets/images/resources/work-process-1-1.jpg" alt="rofiex">
+                            </div>
+                            <div class="work-process-one__item__content">
+                                <div class="work-process-one__item__number"></div><!-- /.work-process-number -->
+                                <h4 class="work-process-one__item__title">Roofing Working</h4><!-- /.work-process-title -->
+                                <p class="work-process-one__item__text">
+                                    We are best individuals in the overcoming quality of life whether bulding
+                                </p><!-- /.work-process-text -->
+                                <a class="work-process-one__item__rm" href="about.html"><i class="icon-up-right-arrow"></i></a>
+                            </div>
+                        </div><!-- /.work-process-one__item -->
+                    </div><!-- item -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="work-process-one__item text-center">
+                            <div class="work-process-one__item__image">
+                                <img src="assets/images/resources/work-process-1-2.jpg" alt="rofiex">
+                            </div>
+                            <div class="work-process-one__item__content">
+                                <div class="work-process-one__item__number"></div><!-- /.work-process-number -->
+                                <h4 class="work-process-one__item__title">Roofing Installation</h4><!-- /.work-process-title -->
+                                <p class="work-process-one__item__text">
+                                    We are best individuals in the overcoming quality of life whether bulding
+                                </p><!-- /.work-process-text -->
+                                <a class="work-process-one__item__rm" href="about.html"><i class="icon-up-right-arrow"></i></a>
+                            </div>
+                        </div><!-- /.work-process-one__item -->
+                    </div><!-- item -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="work-process-one__item text-center">
+                            <div class="work-process-one__item__image">
+                                <img src="assets/images/resources/work-process-1-3.jpg" alt="rofiex">
+                            </div>
+                            <div class="work-process-one__item__content">
+                                <div class="work-process-one__item__number"></div><!-- /.work-process-number -->
+                                <h4 class="work-process-one__item__title">Roofing Successful</h4><!-- /.work-process-title -->
+                                <p class="work-process-one__item__text">
+                                    We are best individuals in the overcoming quality of life whether bulding
+                                </p><!-- /.work-process-text -->
+                                <a class="work-process-one__item__rm" href="about.html"><i class="icon-up-right-arrow"></i></a>
+                            </div>
+                        </div><!-- /.work-process-one__item -->
+                    </div><!-- item -->
                 </div>
             </div>
+        </section>
+        <section class="cta-one">
+            <div class="cta-one__bg jarallax" data-jarallax data-speed="0.3" data-imgPosition="50% -100%" style="background-image: url(assets/images/backgrounds/cta-bg-1-1.jpg);"></div><!-- /.cta-one__bg -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 wow fadeInLeft">
+                        <div class="cta-one__content">
+                            <div class="sec-title text-left">
 
-            <!-- Product Item 2 -->
-            <div class="item">
-                <div class="product__item group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="product__item__img relative overflow-hidden">
-                        <img src="assets/images/new/P-2.png" 
-                             alt="Chrome Rack" 
-                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                             loading="lazy">
-                        
-                        <div class="product__item__btn absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Chrome%20Rack" 
-                               target="_blank"
-                               class="flex items-center justify-center w-11 h-11 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-colors">
-                                <i class="icon-whatsapp text-2xl"></i>
-                            </a>
+                                <h6 class="sec-title__tagline bw-split-in-up"><img src="assets/images/shapes/sec-title__shape-one-white.png" alt="rofiex">Get Discount<img src="assets/images/shapes/sec-title__shape-one-white.png" alt="rofiex"></h6><!-- /.sec-title__tagline -->
+
+                                <h3 class="sec-title__title sec-title__title--white bw-split-in-left">Get a 25% Discount On Roofing Repair Service</h3><!-- /.sec-title__title -->
+                            </div><!-- /.sec-title -->
+                            <a href="contact.html" class="rofiex-btn"><span><i class="flaticon-up-right-arrow"></i>Get A Quote</span></a>
+                        </div><!-- /.cta-one__content -->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="cta-one__image">
+                            <div class="cta-one__image__bg wow fadeInRight" data-wow-delay="00ms" style="background-image: url(assets/images/shapes/cta-1-image-bg.png);"></div>
+                            <img class="wow fadeInUp" data-wow-delay="200ms" src="assets/images/resources/cta-1-1.png" alt="rofiex">
                         </div>
                     </div>
-
-                    <div class="product__item__content p-6">
-                        <h4 class="product__item__title text-xl font-semibold text-gray-900 mb-2">
-                            <a href="#" class="hover:text-blue-600 transition-colors">Chrome Rack</a>
-                        </h4>
-                        
-                        <div class="flex items-baseline justify-center gap-1 mb-5">
-                            <span class="text-3xl font-bold text-gray-900">₹240</span>
-                        </div>
-
-                        <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Chrome%20Rack" 
-                           target="_blank"
-                           class="product__item__link block w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition-all text-center">
-                            Buy Now on WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product Item 3 -->
-            <div class="item">
-                <div class="product__item group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="product__item__img relative overflow-hidden">
-                        <img src="assets/images/new/P-3.png" 
-                             alt="Zig Zag" 
-                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                             loading="lazy">
-                        
-                        <div class="product__item__btn absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Zig%20Zag" 
-                               target="_blank"
-                               class="flex items-center justify-center w-11 h-11 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-colors">
-                                <i class="icon-whatsapp text-2xl"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="product__item__content p-6">
-                        <h4 class="product__item__title text-xl font-semibold text-gray-900 mb-2">
-                            <a href="#" class="hover:text-blue-600 transition-colors">Zig Zag</a>
-                        </h4>
-                        
-                        <div class="flex items-baseline justify-center gap-1 mb-5">
-                            <span class="text-3xl font-bold text-gray-900">₹240</span>
-                        </div>
-
-                        <a href="https://wa.me/919444111658?text=I'm%20interested%20in%20Zig%20Zag" 
-                           target="_blank"
-                           class="product__item__link block w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition-all text-center">
-                            Buy Now on WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add more items here following the same pattern -->
-
-        </div>
-    </div>
-</section><!-- /.product-page -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
        <section class="why-choose-two">
     <div class="why-choose-two__shape" style="background-image: url(assets/images/shapes/why-choose-two-bg.png);"></div>
     <div class="container">
@@ -699,6 +1193,91 @@
 </section>
 
        <!-- /.testimonials-three -->
+
+       <section class="gallery-page">
+            <div class="container">
+                <div class="sec-title text-center">
+    <h6 class="sec-title__tagline bw-split-in-up">
+        <img src="assets/images/shapes/sec-title__shape-one.png" alt="rofiex">Our Gallery<img src="assets/images/shapes/sec-title__shape-one.png" alt="rofiex">
+    </h6>
+    <h3 class="sec-title__title bw-split-in-left">Explore Our Chennai Projects & Gallery</h3>
+</div>
+                <div class="gallery-page__carousel rofiex-owl__carousel rofiex-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
+				"items": 1,
+				"margin": 0,
+				"loop": false,
+				"smartSpeed": 700,
+				"nav": false,
+				"navText": ["<i class=\"flaticon-up-right-arrow\"></i>","<i class=\"flaticon-up-right-arrow\"></i>"],
+				"dots": true,
+				"autoplay": true,
+				"responsive": {
+					"0": {
+						"items": 1
+					},
+					"768": {
+						"items": 2,
+						"margin": 30
+					},
+					"992": {
+						"items": 3,
+						"margin": 30
+					}
+				}
+			}'>
+                    <div class="item">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/new/1.jpg" alt="rofiex">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/new/1.jpg" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/new/2.jpg" alt="rofiex">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/new/2.jpg" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/new/3.jpg" alt="rofiex">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/new/3.jpg" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/new/4.jpg" alt="rofiex">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/new/4.jpg" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/new/5.jpg" alt="rofiex">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/new/5.jpg" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.item -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.gallery-page -->
 
        <section class="testimonials-one">
     <div class="container">
